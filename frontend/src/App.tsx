@@ -47,15 +47,13 @@ export default function MyApp() {
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/")
-      .then((response) => {
-        setMessage(response.data.message);
-      })
-      .catch((error) => {
+      .then((response) => setMessage(response.data.message))
+      .catch((error) =>
         console.error(
           "An error occurred while fetching data from backend: ",
           error
-        );
-      });
+        )
+      );
   }, []);
 
   return (
